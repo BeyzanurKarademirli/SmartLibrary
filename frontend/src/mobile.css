@@ -1,0 +1,6 @@
+@media(max-width:760px){.mobile-scrim{display:block;position:fixed;inset:0;background:#17221950;border:0;z-index:15}}
+@media(max-width:760px){.inventory-actions{min-width:210px}.inventory-form{grid-template-columns:1fr}.inventory-form .wide-field{grid-column:auto}.admin-tabs{overflow:auto}.admin-tabs button{white-space:nowrap}.payment-actions{min-width:140px}.notice-row{align-items:flex-start;flex-wrap:wrap}.notice-row .loan-info{min-width:65%}}
+@media(max-width:760px){.topbar-navigation{flex:1;gap:6px}.history-controls{gap:2px}.history-button{width:25px;height:25px}.breadcrumbs{gap:5px;min-width:0}.breadcrumb-home,.breadcrumbs strong{font-size:10px;white-space:nowrap}.topbar-actions{flex-shrink:0}}
+@media(max-width:760px){.book-modal .book-cover-image{height:190px}.profile-details{grid-template-columns:1fr 1fr}.profile-usage-grid{grid-template-columns:1fr 1fr}.profile-card{padding:16px}.profile-card-identity{align-items:flex-start;flex-wrap:wrap}.profile-card-identity>.status-pill{margin-left:67px}}
+
+@media(max-width:760px){.book-modal .book-cover-button{min-height:190px}.book-modal .book-cover-image{height:190px;padding:6px}}
