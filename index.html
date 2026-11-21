@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SmartLibrary</title>
+<meta name="description" content="SmartLibrary, React + TypeScript arayüzü ve ASP.NET Core API&#x27;si ile PostgreSQL üzerinde çalışan, katmanlı bir kütüphane otomasyonu başlangıç sürümüdür.">
+<meta property="og:title" content="SmartLibrary">
+<meta property="og:description" content="SmartLibrary, React + TypeScript arayüzü ve ASP.NET Core API&#x27;si ile PostgreSQL üzerinde çalışan, katmanlı bir kütüphane otomasyonu başlangıç sürümüdür.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f7f7f9; --surface: #ffffff; --text: #1d1d24; --muted: #5d5d6b; --border: #e4e4ea;
+  --accent: #5b5bd6; --accent-text: #ffffff; --code-bg: #f1f1f5; --hero-a: #ececfb; --hero-b: #f7f7f9;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111116; --surface: #1a1a21; --text: #ececf1; --muted: #a0a0ad; --border: #2c2c36;
+    --accent: #8b8bf5; --accent-text: #111116; --code-bg: #23232c; --hero-a: #1c1c2e; --hero-b: #111116;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.65 Inter, system-ui, -apple-system, "Segoe UI", sans-serif; }
+a { color: var(--accent); }
+.wrap { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+header.hero { background: linear-gradient(180deg, var(--hero-a), var(--hero-b)); border-bottom: 1px solid var(--border); padding: 64px 0 40px; }
+.owner { color: var(--muted); font-size: 14px; font-weight: 500; letter-spacing: .02em; }
+h1.title { font-size: clamp(32px, 6vw, 48px); line-height: 1.1; margin: 8px 0 14px; letter-spacing: -0.02em; }
+.lead { color: var(--muted); font-size: 18px; max-width: 640px; margin: 0 0 22px; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 26px; }
+.tag { font-size: 13px; font-weight: 500; padding: 3px 10px; border-radius: 999px; background: var(--surface); border: 1px solid var(--border); }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 10px; font-weight: 600; font-size: 15px; text-decoration: none; border: 1px solid var(--border); background: var(--surface); color: var(--text); }
+.btn.primary { background: var(--accent); color: var(--accent-text); border-color: var(--accent); }
+.btn:hover { filter: brightness(1.06); }
+.clone { margin-top: 20px; display: flex; align-items: center; gap: 8px; max-width: 100%; }
+.clone code { flex: 1; min-width: 0; overflow-x: auto; white-space: nowrap; padding: 9px 12px; border-radius: 8px; background: var(--surface); border: 1px solid var(--border); font: 13px "JetBrains Mono", ui-monospace, monospace; }
+.clone button { padding: 9px 12px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); color: var(--text); font: inherit; font-size: 13px; cursor: pointer; }
+main { padding: 40px 0 64px; }
+article { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 8px 32px 28px; }
+article h1, article h2, article h3 { line-height: 1.25; margin-top: 1.8em; }
+article h2 { font-size: 22px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
+article img { max-width: 100%; height: auto; border-radius: 8px; }
+article { overflow-wrap: anywhere; }
+article code { font: 0.9em "JetBrains Mono", ui-monospace, monospace; background: var(--code-bg); padding: 2px 6px; border-radius: 5px; }
+article pre { background: var(--code-bg); padding: 14px 16px; border-radius: 10px; overflow-x: auto; }
+article pre code { background: none; padding: 0; }
+article table { border-collapse: collapse; width: 100%; display: block; overflow-x: auto; }
+article th, article td { border: 1px solid var(--border); padding: 8px 12px; text-align: left; }
+article th { background: var(--code-bg); }
+footer { color: var(--muted); font-size: 14px; padding: 0 0 40px; text-align: center; }
+@media (max-width: 600px) { article { padding: 4px 18px 20px; } header.hero { padding: 44px 0 32px; } }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="owner">BeyzanurKarademirli / SmartLibrary</div>
+    <h1 class="title">SmartLibrary</h1>
+    <p class="lead">SmartLibrary, React + TypeScript arayüzü ve ASP.NET Core API&#x27;si ile PostgreSQL üzerinde çalışan, katmanlı bir kütüphane otomasyonu başlangıç sürümüdür.</p>
+    <div class="tags"><span class="tag">C#</span><span class="tag">TypeScript</span><span class="tag">CSS</span><span class="tag">HTML</span></div>
+    <div class="actions">
+      <a class="btn primary" href="https://github.com/BeyzanurKarademirli/SmartLibrary">GitHub'da görüntüle</a>
+      <a class="btn" href="https://github.com/BeyzanurKarademirli/SmartLibrary/archive/refs/heads/main.zip">ZIP olarak indir</a>
+    </div>
+    <div class="clone"><code id="clone">git clone https://github.com/BeyzanurKarademirli/SmartLibrary.git</code><button type="button" onclick="navigator.clipboard.writeText(document.getElementById('clone').textContent).then(()=>{this.textContent='Kopyalandı'})">Kopyala</button></div>
+  </div>
+</header>
+<main>
+  <div class="wrap"><article>
+<h2>Hızlı başlangıç (Docker)</h2>
+<ol>
+<li><code>.env.example</code> dosyasını <code>.env</code> olarak kopyalayın.</li>
+<li><code>.env</code> içindeki <code>POSTGRES_PASSWORD</code>, <code>JWT_SIGNING_KEY</code> ve <code>SEED_ADMIN_PASSWORD</code> değerlerini değiştirin. JWT anahtarı en az 32 byte olmalıdır.</li>
+<li>Repository kökünde <code>docker compose up --build</code> komutunu çalıştırın.</li>
+<li>Arayüz: <a href="http://localhost:5173">http://localhost:5173</a> · API: <a href="http://localhost:5180">http://localhost:5180</a> · Swagger: <a href="http://localhost:5180/swagger">http://localhost:5180/swagger</a></li>
+</ol>
+<p>İlk açılışta veritabanı migration'ları uygulanır ve örnek katalog eklenir. Yönetici e-postası/parolası <code>.env</code> dosyasındaki <code>SEED_ADMIN_EMAIL</code> ve <code>SEED_ADMIN_PASSWORD</code> değerleridir. Üyeler arayüzden kayıt olabilir. Yönetici API aracılığıyla kütüphaneci hesabı ekleyebilir.</p>
+<h2>Geliştirme komutları</h2>
+<p>Backend, PostgreSQL çalışırken <code>dotnet run --project backend/src/SmartLibrary.Api</code> ile başlatılabilir. Frontend için <code>cd frontend</code>, <code>npm ci</code>, <code>npm run dev</code> komutlarını kullanın. Frontend API adresi <code>VITE_API_BASE_URL</code> ile ayarlanır; varsayılan <code>http://localhost:5180</code> değeridir.</p>
+<p>Migration eklemek için repository kökünde <code>dotnet tool restore</code> ve <code>dotnet tool run dotnet-ef migrations add MigrationName --project backend/src/SmartLibrary.Infrastructure --startup-project backend/src/SmartLibrary.Api --output-dir Persistence/Migrations</code> komutlarını kullanın.</p>
+<p>Unit ve API integration testlerini çalıştırmak için <code>dotnet test SmartLibrary.sln -c Release</code> komutunu kullanın. Frontend üretim derlemesi <code>cd frontend &amp;&amp; npm ci &amp;&amp; npm run build</code> ile alınır.</p>
+<h2>İlk sürüm kapsamı</h2>
+<ul>
+<li>Kitap arama, kategori filtreleme, kitap ayrıntısı, yazar/künye bilgileri ve fiziksel kopya barkodları</li>
+<li>Üye kayıt/giriş, parola hash'i, JWT ve Admin/Librarian/Member rol politikaları</li>
+<li>Üye ödünçleri, uzatma, favoriler, rezervasyon kuyruğu ve gecikme cezası kayıtları</li>
+<li>Personel paneli, ödünç verme/iade, üye arama ve dashboard özetleri</li>
+<li>Dönemsel raporlar: ödünç/iade, yeni üyeler, tahsilat, popüler kitaplar ve geciken ödünçler; CSV dışa aktarımı</li>
+<li>Admin için kalıcı kütüphane kuralları: ödünç süresi, üye limiti, günlük gecikme bedeli ve rezervasyon teslim süresi</li>
+<li>Desteklenen tarayıcılarda kamera ile ISBN/barkod/QR okuma; desteklenmeyen tarayıcılarda manuel giriş</li>
+<li>Personel için yazar, yayınevi, kategori ve raf katalog listeleri; kitap/kopya formlarında otomatik öneri</li>
+<li>Yazar-kitabı çoktan-çoğa; kategori/yayınevi-kitap ve raf-kopya ilişkileri FK ile korunur. Eski metin künyeleri geçiş sırasında korunup ilişkilendirilir.</li>
+<li>Kitap sayfa sayısı künyeye kaydedilir ve kitap ayrıntısında gösterilir.</li>
+<li>İlk kurulumda örnek kataloğa Open Library Covers API ISBN URL'leriyle 10 kitap eklenir; var olan katalog silinmez veya sıfırlanmaz</li>
+<li>Yönetici için personel hesabı oluşturma ve audit kayıtları</li>
+<li>EF Core migration'ları, PostgreSQL, Docker Compose ve Swagger</li>
+</ul>
+<h2>İş kuralı varsayımları</h2>
+<ul>
+<li>Ödünç süresi 14 gün; bir ödünç bir kez 14 gün uzatılabilir.</li>
+<li>Üye aynı anda en fazla 5 kitap alabilir; ödenmemiş ceza varsa yeni ödünç verilemez.</li>
+<li>Gecikme cezası her gün için 5 TL olarak kaydedilir. Ödeme personel API'si üzerinden kısmi/tam tutar olarak işlenir.</li>
+<li>Hazır rezervasyon için teslim alma süresi 2 gündür.</li>
+<li>Üyelik herkese açık kayıtla açılır; rol daima Member atanır. Personel hesabı yalnızca Admin oluşturabilir.</li>
+<li>Bildirimler uygulama içinde tutulur; SMTP ayarlandığında rezervasyon hazır bildirimi ve vade yaklaşma hatırlatması e-posta ile de gönderilir.</li>
+<li>Gmail SMTP için <code>.env</code> içinde <code>SMTP_HOST</code>, <code>SMTP_PORT</code>, <code>SMTP_USERNAME</code>, <code>SMTP_PASSWORD</code>, <code>SMTP_FROM_ADDRESS</code> ve <code>SMTP_FROM_NAME</code> ayarlanır. Normal hesap parolası yerine Google Uygulama Şifresi kullanılır; SMTP alanları boşsa e-posta gönderimi kapalı kalır.</li>
+<li>Arayüz Türkçe/İngilizce ve açık/koyu tema tercihlerini tarayıcıda saklar.</li>
+<li>Üye ve personel için Gemini kütüphane asistanı eklidir. <code>GEMINI_API_KEY</code> sunucu ortam değişkenine eklenmeden chatbot yanıt vermez; anahtar frontend'e gönderilmez.</li>
+<li>Yönetici &gt; Sistem ayarları üzerinden kural değiştirilebilir; aralıklar API tarafında doğrulanır ve audit kaydı tutulur.</li>
+<li>Rapor API'si en fazla 366 günlük dönem kabul eder; rapor ve ayar endpoint'leri personel/yönetici politikalarıyla korunur.</li>
+<li>Kapaklar dikey kapak oranını koruyan <code>contain</code> çerçevesinde gösterilir; kırpılmaz.</li>
+</ul>
+<h2>Katmanlar</h2>
+<pre><code class="language-text">frontend/                         React + TypeScript + Tailwind CSS
+backend/src/SmartLibrary.Domain/  Entity ve domain enum'ları
+backend/src/SmartLibrary.Application/ İş akışları ve uygulama kuralları
+backend/src/SmartLibrary.Infrastructure/ EF Core ve PostgreSQL eşlemesi
+backend/src/SmartLibrary.Api/     HTTP API, JWT, Swagger ve DI
+</code></pre>
+<h2>Güvenlik ve üretim notları</h2>
+<p>Parolalar ASP.NET Identity <code>PasswordHasher</code> ile hash'lenir; uygulama gerçek ödeme bilgisi saklamaz. JWT imzalama anahtarı ve yönetici parolası environment secret olarak verilmelidir. Demo compose Swagger'ı kolay erişim için Development modunda açar; internete açık dağıtım öncesi üretim ayarları, HTTPS/reverse proxy, refresh-token oturum yönetimi, rate limiting, e-posta doğrulaması, yedekleme ve gizli bilgi yönetimi tamamlanmalıdır. JWT mevcut ilk sürümde tarayıcı localStorage'ında tutulur.</p>
+<h2>Başlıca uç noktalar</h2>
+<ul>
+<li><code>POST /api/auth/register</code>, <code>POST /api/auth/login</code>, <code>GET /api/auth/me</code></li>
+<li><code>GET /api/books?q=&amp;category=&amp;page=&amp;pageSize=</code>, <code>GET /api/books/{id}</code></li>
+<li><code>POST /api/books</code>, <code>PUT /api/books/{id}</code>, <code>POST /api/books/{id}/copies</code> (Admin/Librarian)</li>
+<li><code>/api/member/loans</code>, <code>/api/member/reservations</code>, <code>/api/member/favorites</code>, <code>/api/member/fines</code></li>
+<li><code>/api/staff/loans</code>, <code>/api/staff/members</code>, <code>/api/staff/dashboard</code>, <code>/api/staff/fines</code> (Admin/Librarian)</li>
+<li><code>POST /api/admin/staff</code>, <code>GET /api/staff/audit</code> (Admin)</li>
+<li><code>POST /api/admin/email/test</code> (Admin; test iletisini oturum açmış yönetici adresine gönderir)</li>
+<li><code>POST /api/assistant/chat</code> (oturum açmış kullanıcı; Gemini API anahtarı gerekir)</li>
+</ul>
+  </article></div>
+</main>
+<footer><div class="wrap"><a href="https://github.com/BeyzanurKarademirli">@BeyzanurKarademirli</a> · <a href="https://github.com/BeyzanurKarademirli/SmartLibrary">Kaynak kod</a></div></footer>
+</body>
+</html>
